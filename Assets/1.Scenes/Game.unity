@@ -272,7 +272,7 @@ Animator:
   m_GameObject: {fileID: 366110626}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 50dbb4d63832bd942ad42be03492c202, type: 2}
+  m_Controller: {fileID: 22100000, guid: 36c0188f9dec5f34dbaee902d65fdf1a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -632,7 +632,7 @@ Animator:
   m_GameObject: {fileID: 442688554}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 56d8b5bca13b38d4fbcf43bcc15a8697, type: 2}
+  m_Controller: {fileID: 22100000, guid: 3e02f055fed78674fb6f738d17cdb9c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1034,7 +1034,7 @@ Animator:
   m_GameObject: {fileID: 967802494}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e3a19d3ffdb909d46aac296feb81e21a, type: 2}
+  m_Controller: {fileID: 22100000, guid: 82f3c885db67e134eb5f5846ea8588b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1140,7 +1140,7 @@ Animator:
   m_GameObject: {fileID: 993392082}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: e79293e63e0e04b45ac1ed621f4015ed, type: 2}
+  m_Controller: {fileID: 22100000, guid: 2053af2966f351f4f9be283d38f2230b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2085,7 +2085,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1599860882}
         m_TargetAssemblyTypeName: Camera, Assembly-CSharp
-        m_MethodName: Left_Button
+        m_MethodName: Right_Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
