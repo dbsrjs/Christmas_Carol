@@ -16,6 +16,6 @@ public class Blue_Tanker : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(1, 0, 0) * 0.7f * Time.deltaTime;
-        //animator.SetTrigger("Move");
+        animator.SetTrigger("doMove");
     }
 }
