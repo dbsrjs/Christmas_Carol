@@ -49,7 +49,7 @@ public class Red_Tanker : MonoBehaviour
                         if (atkTimer > atkTime)
                         {
                             atkTimer = 0;
-                            p.Hit(10);
+                            blueObject.GetComponent<Blue_Tanker>().Hit(10);
                         }
                     }
 
