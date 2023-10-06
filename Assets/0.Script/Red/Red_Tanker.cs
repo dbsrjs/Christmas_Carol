@@ -77,9 +77,8 @@ public class Red_Tanker : MonoBehaviour
         if (hp <= 0)    //죽으면
         {
             Destroy(GetComponent<Rigidbody2D>());   //Rigidbody2D 삭제
-            animator.SetTrigger("doDie");    //doDie 애니메이션 실행
-            //yield return new WaitForSeconds(2f);    //2초 후
-            Destroy(gameObject);    //몬스터 삭제
+            animator.SetTrigger("doDie");    //doDie 애니메이션 실행            
+            Destroy(gameObject);    //객체 삭제
         }
     }
 }

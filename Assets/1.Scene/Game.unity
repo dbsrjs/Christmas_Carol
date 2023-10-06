@@ -779,7 +779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442688554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -3.31, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -871,7 +871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2874eb7b39e77428babc05f3d9d89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 993719290}
   animator: {fileID: 442688556}
   HP: 100
 --- !u!61 &442688559
@@ -930,6 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656805061}
+  - component: {fileID: 656805066}
   - component: {fileID: 656805063}
   - component: {fileID: 656805062}
   - component: {fileID: 656805064}
@@ -1076,6 +1076,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &656805066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656805060}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3aa30427be1b384b949f4652e2e3b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p: {fileID: 442688558}
+  animator: {fileID: 656805062}
+  hp: 100
 --- !u!1 &701000049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701000050}
+  - component: {fileID: 701000055}
   - component: {fileID: 701000052}
   - component: {fileID: 701000051}
   - component: {fileID: 701000053}
@@ -1231,6 +1247,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &701000055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701000049}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3aa30427be1b384b949f4652e2e3b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  p: {fileID: 442688558}
+  animator: {fileID: 701000051}
+  hp: 100
 --- !u!1 &797872203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,7 +1852,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993719286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3aa30427be1b384b949f4652e2e3b33, type: 3}
   m_Name: 
