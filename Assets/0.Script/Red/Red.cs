@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Red_Tanker : MonoBehaviour
+public class Red : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
@@ -66,7 +66,7 @@ public class Red_Tanker : MonoBehaviour
                     if (atkTimer > atkTime)
                     {
                         atkTimer = 0;
-                        blueObject.GetComponent<Blue_Tanker>().Hit(20);
+                        blueObject.GetComponent<Blue_Tanker>().Hit(50);
                         animator.SetTrigger("doAttack"); // doAttack 애니메이션 실행
                     }
                 }

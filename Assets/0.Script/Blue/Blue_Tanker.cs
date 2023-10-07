@@ -6,25 +6,30 @@ public class Blue_Tanker : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
-    GameObject[] redObjects;
+    [HideInInspector] public GameObject[] redObjects;
+    [SerializeField] private GameObject redBase;
 
     private float stoppingDistance = 0.7f; // 멈출 거리 설정
 
     private float atkTime = 1.5f; // 공격 간격
     private float atkTimer;
 
-    public int HP = 100; // public int HP { get; set; }
+    [HideInInspector] public int HP = 100; // public int HP { get; set; }
 
     void Update()
     {
         redObjects = GameObject.FindGameObjectsWithTag("Red");
 
-        if (HP <= 0 || redObjects == null)
-            return;
-
         float closestDistance = Mathf.Infinity;
         GameObject closestRedObject = null;
 
+        if (HP <= 0)
+            return;
+
+        if (redObjects == null)
+        {
+               
+        }
 
         foreach (GameObject redObject in redObjects)
         {
