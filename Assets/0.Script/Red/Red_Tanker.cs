@@ -6,9 +6,10 @@ public class Red_Tanker : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
-    GameObject[] blueObjects;
+    [HideInInspector] public GameObject[] blueObjects;
+    [HideInInspector] public GameObject[] blueBase;
 
-    private float stoppingDistance = 0.7f; // 멈출 거리 설정
+    private float stoppingDistance = 0.7f; // 멈출 거리 설정  (1.4f)
 
     private float atkTime = 1.5f; // 공격 간격
     private float atkTimer;
@@ -18,60 +19,90 @@ public class Red_Tanker : MonoBehaviour
     void Update()
     {
         blueObjects = GameObject.FindGameObjectsWithTag("Blue");
+        blueBase = GameObject.FindGameObjectsWithTag("Blue_Base");
 
-        if (HP <= 0 || blueObjects == null)
+        if (HP <= 0)
             return;
 
-        float closestDistance = Mathf.Infinity;
-        GameObject closestBlueObject = null;
+        //redObjects의 객체수가 0 초과일 경우 targetObjects를 redObjects로 설정
+        GameObject[] targetObjects = blueObjects.Length > 0 ? blueObjects : blueBase;
+        MoveAndAttack(targetObjects);
+    }
 
+    void MoveAndAttack(GameObject[] targetObjects)
+    {
+        GameObject closestTarget = GetClosestTarget(targetObjects);
 
-        foreach (GameObject blueObject in blueObjects)
+        if (closestTarget != null)
         {
-            if (blueObject != null)
+            float distance = Vector2.Distance(closestTarget.transform.position, transform.position);
+
+            // targetObjects가 redBase일 경우 stoppingDistance를 1.4로 설정
+            float currentStoppingDistance = targetObjects[0].tag == "Blue_Base" ? 1.4f : stoppingDistance;
+
+            if (distance > currentStoppingDistance)
             {
-                float distance = Vector2.Distance(blueObject.transform.position, transform.position);
+                MoveToTarget(closestTarget);
+            }
+
+            else
+            {
+                atkTimer += Time.deltaTime;
+                if (atkTimer > atkTime)
+                {
+                    atkTimer = 0;
+                    AttackTarget(closestTarget);
+                }
+            }
+        }
+    }
+
+    GameObject GetClosestTarget(GameObject[] targets)
+    {
+        float closestDistance = Mathf.Infinity;
+        GameObject closestTarget = null;
+
+        foreach (GameObject target in targets)
+        {
+            if (target != null)
+            {
+                float distance = Vector2.Distance(target.transform.position, transform.position);
 
                 if (distance < closestDistance)
                 {
                     closestDistance = distance;
-                    closestBlueObject = blueObject;
+                    closestTarget = target;
                 }
             }
         }
 
-        if (closestBlueObject != null)
-        {
-            if (closestDistance > stoppingDistance)
-            {
-                float speed = 1.0f; // 이동 속도 설정
-                Vector2 direction = (closestBlueObject.transform.position - transform.position).normalized;
-                transform.position += (Vector3)direction * speed * Time.deltaTime;
+        return closestTarget;
+    }
 
-                animator.SetTrigger("doMove"); // 이동 애니메이션 재생
-            }
+    void MoveToTarget(GameObject target)
+    {
+        float speed = 1.0f; // 이동 속도 설정
+        Vector2 direction = (target.transform.position - transform.position).normalized;
+        transform.position += (Vector3)direction * speed * Time.deltaTime;
+
+        animator.SetTrigger("doMove"); // 이동 애니메이션 재생
+    }
+
+    void AttackTarget(GameObject target)
+    {
+        atkTimer = 0;
+
+        if (target.tag == "Blue")
+        {
+            target.GetComponent<Blue_Tanker>().Hit(40);
         }
 
-        foreach (GameObject blueObject in blueObjects)
+        else if (target.tag == "Blue_Base")
         {
-            if (blueObject != null)
-            {
-                float distance = Vector2.Distance(blueObject.transform.position, transform.position);    //가장 가까운 빨간색 객체로 향하는 방향을 나타내는 단위 벡터입니다.
-
-                //distance <= minDistance && 
-                if (distance <= stoppingDistance) // 멈춘 상태에서만 공격 가능하도록 조건 추가
-                {
-                    atkTimer += Time.deltaTime;
-                    // 공격
-                    if (atkTimer > atkTime)
-                    {
-                        atkTimer = 0;
-                        blueObject.GetComponent<Blue_Tanker>().Hit(20);
-                        animator.SetTrigger("doAttack"); // doAttack 애니메이션 실행
-                    }
-                }
-            }
+            target.GetComponent<Blue_Base>().Hit(40);    //5
         }
+
+        animator.SetTrigger("doAttack"); // doAttack 애니메이션 실행
     }
 
     public void Hit(int damage)

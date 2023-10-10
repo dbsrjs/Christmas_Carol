@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Red_Base : MonoBehaviour
+public class Blue_Base : MonoBehaviour
 {
     [HideInInspector] public int HP = 100;
-    [SerializeField] private GameObject victory;
+    [SerializeField] private GameObject defeat;
     [SerializeField] private GameObject wizard;
 
     //[SerializeField] private Animator animator;
 
     private void Start()
     {
-        victory.SetActive(false);
+        defeat.SetActive(false);
     }
 
     public void Hit(int damage)
@@ -27,7 +27,7 @@ public class Red_Base : MonoBehaviour
             //animator.SetTrigger("doDie");   //doDie 애니메이션 실행
             Destroy(gameObject);    //객체 삭제
             Destroy(wizard);
-            victory.SetActive(true);
+            defeat.SetActive(true);
         }
     }
 }
