@@ -786,7 +786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &442688555
 Transform:
   m_ObjectHideFlags: 0
@@ -890,7 +890,6 @@ MonoBehaviour:
   animator: {fileID: 442688556}
   redObjects: []
   redBase: []
-  HP: 100
 --- !u!61 &442688559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -955,7 +954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &640755797
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1029,7 +1028,7 @@ GameObject:
   - component: {fileID: 656805064}
   - component: {fileID: 656805065}
   m_Layer: 6
-  m_Name: Red Swordman
+  m_Name: Red Knight
   m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1177,15 +1176,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656805060}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3aa30427be1b384b949f4652e2e3b33, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca71b5e7afd4d5448acddd43ba8389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 656805062}
   blueObjects: []
   blueBase: []
-  HP: 100
 --- !u!1 &701000049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1355,6 @@ MonoBehaviour:
   animator: {fileID: 701000051}
   blueObjects: []
   blueBase: []
-  HP: 100
 --- !u!1 &772483625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,15 +1758,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967802494}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea2874eb7b39e77428babc05f3d9d89c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a36365ba5fa8cf4db70faa033ddc788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 967802496}
   redObjects: []
   redBase: []
-  HP: 100
 --- !u!1 &993392082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,7 +1937,6 @@ MonoBehaviour:
   animator: {fileID: 993392084}
   redObjects: []
   redBase: []
-  HP: 100
 --- !u!1 &993719286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,7 +1957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &993719287
 Transform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2061,6 @@ MonoBehaviour:
   animator: {fileID: 993719288}
   blueObjects: []
   blueBase: []
-  HP: 100
 --- !u!61 &993719291
 BoxCollider2D:
   m_ObjectHideFlags: 0
