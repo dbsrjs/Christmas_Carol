@@ -43,12 +43,12 @@ public class Blue : MonoBehaviour
             float currentStoppingDistance = targetObjects[0].tag == "Red_Base" ? 1.4f : stoppingDistance;
 
             if (distance > currentStoppingDistance)
-            {
+            {                
                 MoveToTarget(closestTarget);
             }
 
             else
-            {
+            {                
                 atkTimer += Time.deltaTime;
                 if (atkTimer > atkTime)
                 {
@@ -82,7 +82,7 @@ public class Blue : MonoBehaviour
     }
 
     void MoveToTarget(GameObject target)
-    {        
+    {
         Vector2 direction = (target.transform.position - transform.position).normalized;
         transform.position += (Vector3)direction * speed * Time.deltaTime;
 
@@ -100,7 +100,7 @@ public class Blue : MonoBehaviour
 
         else if (target.tag == "Red_Base")
         {
-            target.GetComponent<Red_Base>().Hit(40);    //5
+            target.GetComponent<Red_Base>().Hit(15);    //5
         }
 
         animator.SetTrigger("doAttack"); // doAttack 애니메이션 실행

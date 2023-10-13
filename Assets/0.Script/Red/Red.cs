@@ -32,7 +32,7 @@ public class Red : MonoBehaviour
     }
 
     void MoveAndAttack(GameObject[] targetObjects)
-    {
+    {        
         GameObject closestTarget = GetClosestTarget(targetObjects);
 
         if (closestTarget != null)
@@ -43,7 +43,7 @@ public class Red : MonoBehaviour
             float currentStoppingDistance = targetObjects[0].tag == "Blue_Base" ? 1.4f : stoppingDistance;
 
             if (distance > currentStoppingDistance)
-            {
+            {                
                 MoveToTarget(closestTarget);
             }
 
@@ -95,7 +95,7 @@ public class Red : MonoBehaviour
 
         if (target.tag == "Blue")
         {
-            GetComponent<Blue>().Hit(power);
+            target.GetComponent<Blue>().Hit(power);
         }
 
         else if (target.tag == "Blue_Base")
