@@ -17,7 +17,6 @@ public class Blue : MonoBehaviour
     private float stoppingDistance = 0.7f; // 멈출 거리 설정  (1.4f)
     private float atkTimer;
 
-
     void Update()
     {
         redObjects = GameObject.FindGameObjectsWithTag("Red");
@@ -30,25 +29,31 @@ public class Blue : MonoBehaviour
         GameObject[] targetObjects = redObjects.Length > 0 ? redObjects : redBase;
         MoveAndAttack(targetObjects);
     }
-
-    void MoveAndAttack(GameObject[] targetObjects)
+    public int SetHp()
     {
-        GameObject closestTarget = GetClosestTarget(targetObjects);
+        return HP;
+    }
+
+    void MoveAndAttack(GameObject[] targetObjects)  //가장 가까운 타겟에게 이동하거나 공격
+    {
+        GameObject closestTarget = GetClosestTarget(targetObjects); // 가장 가까운 타겟 검색
 
         if (closestTarget != null)
         {
+            // 현재 위치와 가장 가까운 타겟과의 거리를 계산
             float distance = Vector2.Distance(closestTarget.transform.position, transform.position);
 
             // targetObjects가 redBase일 경우 stoppingDistance를 1.4로 설정
             float currentStoppingDistance = targetObjects[0].tag == "Red_Base" ? 1.4f : stoppingDistance;
 
-            if (distance > currentStoppingDistance)
-            {                
+            if (distance > currentStoppingDistance) //타겟에게 이동
+            {
+                animator.SetTrigger("doMove");
                 MoveToTarget(closestTarget);
             }
 
-            else
-            {                
+            else   //타겟 공격
+            {
                 atkTimer += Time.deltaTime;
                 if (atkTimer > atkTime)
                 {
@@ -59,21 +64,22 @@ public class Blue : MonoBehaviour
         }
     }
 
-    GameObject GetClosestTarget(GameObject[] targets)
+    GameObject GetClosestTarget(GameObject[] targets)   //가장 가까운 타겟 검색
     {
-        float closestDistance = Mathf.Infinity;
-        GameObject closestTarget = null;
+        float closestDistance = Mathf.Infinity; // 가장 가까운 거리를 무한대로 초기화
+        GameObject closestTarget = null;    // 가장 가까운 타겟을 null로 초기화
 
         foreach (GameObject target in targets)
         {
             if (target != null)
             {
+                // 현재 위치와 타겟과의 거리를 계산
                 float distance = Vector2.Distance(target.transform.position, transform.position);
 
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closestTarget = target;
+                if (distance < closestDistance) // 계산된 거리가 현재 가장 가까운 거리보다 작다면
+                {                    
+                    closestDistance = distance; // 가장 가까운 거리를 새로운 거리로 업데이트하고
+                    closestTarget = target; // 가장 가까운 타겟을 새로운 타겟으로 업데이트
                 }
             }
         }
@@ -81,12 +87,11 @@ public class Blue : MonoBehaviour
         return closestTarget;
     }
 
-    void MoveToTarget(GameObject target)
+    void MoveToTarget(GameObject target)    //타겟에게 이동
     {
+        // 타겟과 현재 위치 사이의 방향을 계산합니다.
         Vector2 direction = (target.transform.position - transform.position).normalized;
-        transform.position += (Vector3)direction * speed * Time.deltaTime;
-
-        animator.SetTrigger("doMove"); // 이동 애니메이션 재생
+        transform.position += (Vector3)direction * speed * Time.deltaTime;  //타겟에게 이동
     }
 
     void AttackTarget(GameObject target)
@@ -106,17 +111,24 @@ public class Blue : MonoBehaviour
         animator.SetTrigger("doAttack"); // doAttack 애니메이션 실행
     }
 
-    public void Hit(int damage)
+    public void Hit(int damage) //공격
     {
         Debug.Log("Blue Attack");
         HP -= damage;   //데미지에 비례해서 hp 감소
         animator.SetTrigger("doHit");    //hit 애니메이션 실행
 
         if (HP <= 0)    //죽으면
-        {
-            Destroy(GetComponent<Rigidbody2D>());   //Rigidbody2D 삭제
-            animator.SetTrigger("doDie");    //doDie 애니메이션 실행            
-            Destroy(gameObject);    //객체 삭제
+        {           
+            StartCoroutine("Die");
         }
+    }
+
+    private IEnumerator Die()
+    {
+        Destroy(GetComponent<Rigidbody2D>());   //Rigidbody2D 삭제
+        Destroy(GetComponent<BoxCollider2D>()); //BoxCollider2D삭제
+        animator.SetTrigger("doDie");    //doDie 애니메이션 실행
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);    //객체 삭제
     }
 }
