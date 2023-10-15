@@ -640,6 +640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 396161586}
+  - component: {fileID: 396161587}
   - component: {fileID: 396161585}
   - component: {fileID: 396161584}
   - component: {fileID: 396161583}
@@ -733,6 +734,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &396161587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396161582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da1320ae36e22f43b3d62d6a12fa356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red_Health: {fileID: 55715591}
 --- !u!1 &405440001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,7 +1231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &656805061
 Transform:
   m_ObjectHideFlags: 0
@@ -1388,7 +1402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &701000050
 Transform:
   m_ObjectHideFlags: 0
@@ -2393,7 +2407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2874eb7b39e77428babc05f3d9d89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 993392084}
   redObjects: []
   redBase: []
 --- !u!1 &993719286
@@ -2517,7 +2531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3aa30427be1b384b949f4652e2e3b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 993719288}
   blueObjects: []
   blueBase: []
 --- !u!61 &993719291
@@ -3556,7 +3570,7 @@ MonoBehaviour:
   HP: 100
   victory: {fileID: 772483625}
   animator: {fileID: 1635548307}
-  health: {fileID: 0}
+  red_Health: {fileID: 55715591}
 --- !u!95 &1635548307
 Animator:
   serializedVersion: 5

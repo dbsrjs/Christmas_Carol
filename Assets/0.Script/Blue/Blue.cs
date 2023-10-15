@@ -17,6 +17,8 @@ public class Blue : MonoBehaviour
     private float stoppingDistance = 0.7f; // 멈출 거리 설정  (1.4f)
     private float atkTimer;
 
+    private Ui ui;
+
     void Update()
     {
         redObjects = GameObject.FindGameObjectsWithTag("Red");
@@ -100,12 +102,13 @@ public class Blue : MonoBehaviour
 
         if (target.tag == "Red")
         {
-            target.GetComponent<Red>().Hit(power);
+            target.GetComponent<Red>().Hit(power);  //40
         }
 
         else if (target.tag == "Red_Base")
         {
-            target.GetComponent<Red_Base>().Hit(15);    //5
+            target.GetComponent<Red_Base>().Hit(power / 4); //10
+            target.GetComponent<Red_Base>().Health(power / 2);  //20
         }
 
         animator.SetTrigger("doAttack"); // doAttack 애니메이션 실행
