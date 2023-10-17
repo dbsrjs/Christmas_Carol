@@ -1,26 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ui : MonoBehaviour
 {
     [SerializeField] private GameObject red_Health;
+    [SerializeField] private GameObject blue_Health;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Text red_Text;
+    [SerializeField] private Text blue_Text;
 
-    // Update is called once per frame
-    void Update()
-    {
-                
-    }
+    private int red_health = 200;
+    private int blue_health = 200;
 
-    public void Hit(int damage)
+    private int red_text = 20;
+    private int blue_text = 20;
+
+    public void Red_Hit(int damage)
     {
         RectTransform rect_tran = red_Health.GetComponent<RectTransform>();
-        rect_tran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 200 - damage);
+        red_health -= damage;
+        rect_tran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, red_health);
+    }
+
+    public void Blue_Hit(int damage)
+    {
+        RectTransform rect_tran = blue_Health.GetComponent<RectTransform>();
+        blue_health -= damage;
+        rect_tran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, blue_health);
     }
 }

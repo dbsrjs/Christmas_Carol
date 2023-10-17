@@ -30,11 +30,6 @@ public class Red : MonoBehaviour
         MoveAndAttack(targetObjects);
     }
 
-    public int SetHp()
-    {
-        return HP;
-    }
-
     void MoveAndAttack(GameObject[] targetObjects)  //가장 가까운 타겟에게 이동하거나 공격
     {
         GameObject closestTarget = GetClosestTarget(targetObjects); //가장 가까운 타겟 검색
@@ -106,7 +101,7 @@ public class Red : MonoBehaviour
 
         else if (target.tag == "Blue_Base")
         {
-            target.GetComponent<Blue_Base>().Hit(40);    //5
+            target.GetComponent<Blue_Base>().Hit(power / 4);    //10
         }
 
         animator.SetTrigger("doAttack"); // doAttack 애니메이션 실행

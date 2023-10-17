@@ -17,8 +17,6 @@ public class Blue : MonoBehaviour
     private float stoppingDistance = 0.7f; // 멈출 거리 설정  (1.4f)
     private float atkTimer;
 
-    private Ui ui;
-
     void Update()
     {
         redObjects = GameObject.FindGameObjectsWithTag("Red");
@@ -30,10 +28,6 @@ public class Blue : MonoBehaviour
         //redObjects의 객체수가 0 초과일 경우 targetObjects를 redObjects로 설정
         GameObject[] targetObjects = redObjects.Length > 0 ? redObjects : redBase;
         MoveAndAttack(targetObjects);
-    }
-    public int SetHp()
-    {
-        return HP;
     }
 
     void MoveAndAttack(GameObject[] targetObjects)  //가장 가까운 타겟에게 이동하거나 공격
@@ -108,7 +102,6 @@ public class Blue : MonoBehaviour
         else if (target.tag == "Red_Base")
         {
             target.GetComponent<Red_Base>().Hit(power / 4); //10
-            target.GetComponent<Red_Base>().Health(power / 2);  //20
         }
 
         animator.SetTrigger("doAttack"); // doAttack 애니메이션 실행
