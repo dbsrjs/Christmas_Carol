@@ -1418,7 +1418,8 @@ Transform:
   m_LocalPosition: {x: 4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1413082899}
   m_Father: {fileID: 1773872267}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1549,14 +1550,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701000049}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3aa30427be1b384b949f4652e2e3b33, type: 3}
+  m_Script: {fileID: 11500000, guid: 07c4274b7bd2d8b499ac8253da46740c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 701000051}
-  blueObjects: []
-  blueBase: []
 --- !u!1 &719921847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2258,7 +2257,7 @@ GameObject:
   - component: {fileID: 993392086}
   - component: {fileID: 993392087}
   m_Layer: 8
-  m_Name: Blue Ranger
+  m_Name: Blue Archer
   m_TagString: Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2406,14 +2405,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993392082}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea2874eb7b39e77428babc05f3d9d89c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d5ca841e8588dc449e53627daac9a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 993392084}
-  redObjects: []
-  redBase: []
 --- !u!1 &993719286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,7 +2431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &993719287
 Transform:
   m_ObjectHideFlags: 0
@@ -3235,6 +3232,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: right
   main: {fileID: 1599860882}
+--- !u!1 &1413082898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1413082899}
+  m_Layer: 6
+  m_Name: firefos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1413082899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413082898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.369, y: 0.456, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 701000050}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1499598945
 GameObject:
   m_ObjectHideFlags: 0
