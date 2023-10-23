@@ -39,8 +39,8 @@ public class Blue : MonoBehaviour
             // 현재 위치와 가장 가까운 타겟과의 거리를 계산
             float distance = Vector2.Distance(closestTarget.transform.position, transform.position);
 
-            // targetObjects가 redBase일 경우 stoppingDistance를 1.4로 설정
-            float currentStoppingDistance = targetObjects[0].tag == "Red_Base" ? 1.4f : stoppingDistance;
+            // targetObjects가 Red_Base일 경우 stoppingDistance를 1.4로 설정 아닐경우 Archer 스크렙트를 갖고 있지 않으면 기존대로 갖고 있다면 2f로 설정
+            float currentStoppingDistance = targetObjects[0].tag == "Red_Base" ? 1.4f : GetComponent<Blue_Archer>() == null ? stoppingDistance : 2f;
 
             if (distance > currentStoppingDistance) //타겟에게 이동
             {
@@ -94,7 +94,12 @@ public class Blue : MonoBehaviour
     {
         atkTimer = 0;
 
-        if (target.tag == "Red")
+        if (GetComponent<Blue_Archer>() == null)
+        {
+            //transform.GetComponent<Blue_Archer>().Attack();
+        }
+
+        else if (target.tag == "Red")
         {
             target.GetComponent<Red>().Hit(power);  //40
         }

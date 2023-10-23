@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Red_Archer : Archer
+public class Red_Archer : Red
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform parent;
+    [SerializeField] private GameObject prefab;
+    public void Attack()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instantiate(prefab, parent);
     }
 }
