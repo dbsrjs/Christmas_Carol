@@ -94,7 +94,7 @@ public class Red : MonoBehaviour
     {
         atkTimer = 0;
 
-        if (GetComponent<Red_Archer>() == null)
+        if (GetComponent<Red_Archer>() != null)
         {
             transform.GetComponent<Red_Archer>().Attack();
         }

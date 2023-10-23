@@ -94,9 +94,9 @@ public class Blue : MonoBehaviour
     {
         atkTimer = 0;
 
-        if (GetComponent<Blue_Archer>() == null)
+        if (GetComponent<Blue_Archer>() != null)
         {
-            //transform.GetComponent<Blue_Archer>().Attack();
+            transform.GetComponent<Blue_Archer>().Attack();
         }
 
         else if (target.tag == "Red")

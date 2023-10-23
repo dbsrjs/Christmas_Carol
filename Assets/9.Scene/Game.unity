@@ -2095,7 +2095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &967802495
 Transform:
   m_ObjectHideFlags: 0
@@ -2418,6 +2418,8 @@ MonoBehaviour:
   animator: {fileID: 993392084}
   redObjects: []
   redBase: []
+  parent: {fileID: 1685694235}
+  prefab: {fileID: 6292083211657603871, guid: a7486d95eea52a84dbdc96c7b0b6b49a, type: 3}
 --- !u!1 &993719286
 GameObject:
   m_ObjectHideFlags: 0

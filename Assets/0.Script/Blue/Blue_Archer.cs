@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Blue_Archer : Blue
 {
-    // Start is called before the first frame update
+    [SerializeField] private Transform parent;
+    [SerializeField] private GameObject prefab;
+
     void Start()
     {
-        
+        HP = 100;
+        power = 20;
+        speed = 1f;
+        atkTime = 1.2f;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Attack()
     {
-        
+        Instantiate(prefab, parent);
     }
 }
