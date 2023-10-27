@@ -14,9 +14,6 @@ public class Ui : MonoBehaviour
     private int red_health = 200;
     private int blue_health = 200;
 
-    private int red_text = 20;
-    private int blue_text = 20;
-
     public void Red_Hit(int damage)
     {
         RectTransform rect_tran = red_Health.GetComponent<RectTransform>();
@@ -28,6 +25,13 @@ public class Ui : MonoBehaviour
     {
         RectTransform rect_tran = blue_Health.GetComponent<RectTransform>();
         blue_health -= damage;
+        rect_tran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, blue_health);
+    }
+
+    public void Blue_Hill(int hill)
+    {
+        RectTransform rect_tran = blue_Health.GetComponent<RectTransform>();
+        blue_health += hill;
         rect_tran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, blue_health);
     }
 }

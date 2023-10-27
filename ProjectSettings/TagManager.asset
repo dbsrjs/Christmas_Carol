@@ -8,6 +8,8 @@ TagManager:
   - Blue
   - Red_Base
   - Blue_Base
+  - Blue_Arrow
+  - Red_Arrow
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - Red_Base
   - Blue
   - Blue_Base
-  - 
-  - 
+  - Blue_Arrow
+  - Red_Arrow
   - 
   - 
   - 

@@ -11,4 +11,21 @@ public class Red_arrow : MonoBehaviour
         Vector3 vec = Vector3.left * speed * Time.deltaTime;
         transform.position += vec;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Blue>())   //Blue와 출돌
+        {
+            Debug.Log("Blue");
+            collision.GetComponent<Blue>().Hit(20); //20
+        }
+
+        else if (collision.GetComponent<Blue_Base>()) //Blue_Base와 출돌
+        {
+            Debug.Log("Blue_Base");
+            collision.GetComponent<Blue_Base>().Hit(5);
+        }
+
+        Destroy(gameObject);
+    }
 }
