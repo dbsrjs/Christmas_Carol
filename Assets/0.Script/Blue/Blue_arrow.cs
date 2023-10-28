@@ -14,7 +14,6 @@ public class Blue_arrow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("test");
         if (collision.GetComponent<Red>())   //Red¿Í Ãâµ¹
         {
             collision.GetComponent<Red>().Hit(20); //20

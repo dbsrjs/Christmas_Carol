@@ -14,7 +14,7 @@ public class Blue : MonoBehaviour
     protected float speed; //1f 이동 속도
     protected float atkTime;    //1.5f 공격 속도
 
-    private float stoppingDistance = 0.7f; // 멈출 거리 설정  (1.4f)
+    private float stoppingDistance = 0.7f; // 멈출 거리 설정
     private float atkTimer;
 
     void Update()
@@ -24,7 +24,7 @@ public class Blue : MonoBehaviour
 
         if (HP <= 0)
             return;
-
+        
         //redObjects의 객체수가 0 초과일 경우 targetObjects를 redObjects로 설정
         GameObject[] targetObjects = redObjects.Length > 0 ? redObjects : redBase;
         MoveAndAttack(targetObjects);
@@ -39,8 +39,8 @@ public class Blue : MonoBehaviour
             // 현재 위치와 가장 가까운 타겟과의 거리를 계산
             float distance = Vector2.Distance(closestTarget.transform.position, transform.position);
 
-            // targetObjects가 Red_Base일 경우 stoppingDistance를 1.4로 설정 아닐경우 Archer 스크렙트를 갖고 있지 않으면 기존대로 갖고 있다면 2f로 설정
-            float currentStoppingDistance = targetObjects[0].tag == "Red_Base" ? 1.4f : GetComponent<Blue_Archer>() == null ? stoppingDistance : 2f;
+            // Archer 스크렙트를 갖고 있다면 stoppingDistance를 2.3으로 설정 아닐경우 targetObjects가 red_Base일 경우 stoppingDistance를 1.4로 설정 아니라면 기존대로 0.로 설정
+            float currentStoppingDistance = GetComponent<Blue_Archer>() != null ? 2.3f : targetObjects[0].tag == "Red_Base" ? 1.4f : stoppingDistance;
 
             if (distance > currentStoppingDistance) //타겟에게 이동
             {

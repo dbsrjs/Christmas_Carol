@@ -9,15 +9,31 @@ public class Ui : MonoBehaviour
     [SerializeField] private GameObject blue_Health;
 
     [SerializeField] private Text red_Text;
+    [SerializeField] private Text red_Shadow;
+    private int red_num = 20;
+
     [SerializeField] private Text blue_Text;
+    [SerializeField] private Text blue_Shadow;
+    private int blue_num = 20;
 
     private int red_health = 200;
     private int blue_health = 200;
+
+    private void Update()
+    {
+        red_Text.text = red_num.ToString();
+        red_Shadow.text = red_num.ToString();
+
+        blue_Text.text = blue_num.ToString();
+        blue_Shadow.text = blue_num.ToString();
+
+    }
 
     public void Red_Hit(int damage)
     {
         RectTransform rect_tran = red_Health.GetComponent<RectTransform>();
         red_health -= damage;
+        red_num -= 1;
         rect_tran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, red_health);
     }
 
@@ -25,13 +41,7 @@ public class Ui : MonoBehaviour
     {
         RectTransform rect_tran = blue_Health.GetComponent<RectTransform>();
         blue_health -= damage;
-        rect_tran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, blue_health);
-    }
-
-    public void Blue_Hill(int hill)
-    {
-        RectTransform rect_tran = blue_Health.GetComponent<RectTransform>();
-        blue_health += hill;
+        blue_num -= 1;
         rect_tran.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, blue_health);
     }
 }
