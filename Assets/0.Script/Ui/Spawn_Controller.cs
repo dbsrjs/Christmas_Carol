@@ -13,7 +13,6 @@ public class Spawn_Controller : MonoBehaviour
     [SerializeField] private GameObject archer;
 
     [SerializeField] private Blue_Base blue_Base;
-
     public void Wirzard()
     {
         Instantiate(wirzard, wirzard_spawn);
