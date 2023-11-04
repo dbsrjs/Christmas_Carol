@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Blue_Base : MonoBehaviour
 {
-    [HideInInspector] public int HP = 100;
+    [HideInInspector] public int HP;
     [SerializeField] private GameObject defeat;
     [SerializeField] private Animator animator;
     [SerializeField] private Ui ui;
@@ -12,13 +12,14 @@ public class Blue_Base : MonoBehaviour
     private void Start()
     {
         defeat.SetActive(false);
+        HP = 200;
     }
 
     public void Hit(int damage)
     {
-        //Debug.Log("Red_Base Attack");        
         HP -= damage;   //데미지에 비례해서 hp 감소
-        ui.Blue_Hit(damage * 2);
+        print(HP);
+        ui.Blue_Hit(damage);
         animator.SetTrigger("doHit");   //doHit 애니메이션 실행
 
         if (HP <= 0)

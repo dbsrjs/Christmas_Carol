@@ -7,7 +7,7 @@ public class Red_Knight : Red
     private void Start()
     {
         HP = 100;
-        power = 30;
+        power = 40;
         speed = 1f;
         atkTime = 1.5f;
     }

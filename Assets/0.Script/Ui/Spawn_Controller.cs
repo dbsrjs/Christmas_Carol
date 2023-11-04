@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawn_Controller : MonoBehaviour
 {
@@ -12,23 +13,53 @@ public class Spawn_Controller : MonoBehaviour
     [SerializeField] private GameObject knight;
     [SerializeField] private GameObject archer;
 
-    [SerializeField] private Blue_Base blue_Base;
+    [SerializeField] private Slider cost_Bar;
+    [SerializeField] private Text cost_text;
+    [SerializeField] private Text cost_Shadow;
+
     public void Wirzard()
     {
-        Instantiate(wirzard, wirzard_spawn);
+        if (cost_Bar.value >= 10)
+        {
+            Instantiate(wirzard, wirzard_spawn);
+            cost_Bar.value -= 10;
+            cost_text.text = cost_Bar.value.ToString();
+            cost_Shadow.text = cost_Bar.value.ToString();
+        }
+    }
+
+    
+
+    public void Knight()
+    {
+        if (cost_Bar.value >= 3)
+        {
+            Instantiate(knight, parent);
+            cost_Bar.value -= 3;
+            cost_text.text = cost_Bar.value.ToString();
+            cost_Shadow.text = cost_Bar.value.ToString();
+        }
     }
 
     public void Tanker()
     {
-        Instantiate(tanker, parent);
+        if (cost_Bar.value >= 5)
+        {
+            Instantiate(tanker, parent);
+            cost_Bar.value -= 5;
+            cost_text.text = cost_Bar.value.ToString();
+            cost_Shadow.text = cost_Bar.value.ToString();
+        }
     }
 
-    public void Knight()
-    {
-        Instantiate(knight, parent);
-    }
     public void Archer()
     {
-        Instantiate(archer, parent);
+        if (cost_Bar.value >= 7)
+        {
+            Instantiate(archer, parent);
+            cost_Bar.value -= 7;
+            cost_text.text = cost_Bar.value.ToString();
+            cost_Shadow.text = cost_Bar.value.ToString();
+        }
     }
 }

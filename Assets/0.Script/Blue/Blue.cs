@@ -53,7 +53,6 @@ public class Blue : MonoBehaviour
                 atkTimer += Time.deltaTime;
                 if (atkTimer > atkTime)
                 {
-                    atkTimer = 0;
                     AttackTarget(closestTarget);
                 }
             }
