@@ -39,7 +39,7 @@ public class Blue : MonoBehaviour
             // 현재 위치와 가장 가까운 타겟과의 거리를 계산
             float distance = Vector2.Distance(closestTarget.transform.position, transform.position);
 
-            // Archer 스크렙트를 갖고 있다면 stoppingDistance를 2.3으로 설정 아닐경우 targetObjects가 red_Base일 경우 stoppingDistance를 1.4로 설정 아니라면 기존대로 0.로 설정
+            // Archer 스크렙트를 갖고 있다면 stoppingDistance를 2.3으로 설정 아닐경우 targetObjects가 red_Base일 경우 stoppingDistance를 1.4로 설정 아니라면 기존대로 0.7로 설정
             float currentStoppingDistance = GetComponent<Blue_Archer>() != null ? 2.3f : targetObjects[0].tag == "Red_Base" ? 1.4f : stoppingDistance;
 
             if (distance > currentStoppingDistance) //타겟에게 이동
@@ -125,6 +125,7 @@ public class Blue : MonoBehaviour
 
     private IEnumerator Die()
     {
+        this.gameObject.tag = "Die";
         Destroy(GetComponent<Rigidbody2D>());   //Rigidbody2D 삭제
         Destroy(GetComponent<BoxCollider2D>()); //BoxCollider2D삭제
         animator.SetTrigger("doDie");    //doDie 애니메이션 실행

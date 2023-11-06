@@ -10,6 +10,7 @@ TagManager:
   - Blue_Base
   - Blue_Arrow
   - Red_Arrow
+  - Die
   layers:
   - Default
   - TransparentFX

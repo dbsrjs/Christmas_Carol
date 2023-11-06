@@ -3,8 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GameState
+{
+    Play,
+    Pause,
+    Stop
+}
+
 public class Ui : MonoBehaviour
 {
+
+    [HideInInspector] public GameState gamestate = GameState.Play;
     [SerializeField] private GameObject red_Health;
     [SerializeField] private GameObject blue_Health;
 
@@ -23,9 +32,8 @@ public class Ui : MonoBehaviour
     [SerializeField] private Text cost_text;
     [SerializeField] private Text cost_Shadow;
 
-    private int cost_value;
-
     private float timer;
+
     void Start()
     {
         cost_Bar.value = 0;

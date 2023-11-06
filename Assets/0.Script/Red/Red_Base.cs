@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Red_Base : MonoBehaviour
 {
-    [HideInInspector] public int HP;
+    [HideInInspector] public int HP = 200;
     [SerializeField] private GameObject victory;
     [SerializeField] private Animator animator;
     [SerializeField] private Ui ui;

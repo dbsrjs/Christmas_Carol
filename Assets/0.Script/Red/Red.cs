@@ -126,10 +126,12 @@ public class Red : MonoBehaviour
 
     private IEnumerator Die()
     {
+        this.gameObject.tag = "Die";
         Destroy(GetComponent<Rigidbody2D>());   //Rigidbody2D 삭제
         Destroy(GetComponent<BoxCollider2D>()); //BoxCollider2D삭제
         animator.SetTrigger("doDie");    //doDie 애니메이션 실행
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);    //객체 삭제
+
     }
 }
