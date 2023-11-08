@@ -9,6 +9,8 @@ public class Blue : MonoBehaviour
     [HideInInspector] public GameObject[] redObjects;
     [HideInInspector] public GameObject[] redBase;
 
+    private GameManager gameManager;
+
     protected int HP; //100
     protected int power;    //40
     protected float speed; //1f 이동 속도
@@ -16,6 +18,11 @@ public class Blue : MonoBehaviour
 
     private float stoppingDistance = 0.7f; // 멈출 거리 설정
     private float atkTimer;
+
+    void Start()
+    {
+        gameManager = GetComponent<GameManager>();
+    }
 
     void Update()
     {

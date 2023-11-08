@@ -763,10 +763,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1289535348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1289535350}
+        m_TargetAssemblyTypeName: Option, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1534,7 +1534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da1320ae36e22f43b3d62d6a12fa356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamestate: 0
   red_Health: {fileID: 55715591}
   blue_Health: {fileID: 2139536784}
   red_Text: {fileID: 893907121}
@@ -2065,7 +2064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 574048441}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2496,10 +2495,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1289535348}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1289535350}
+        m_TargetAssemblyTypeName: Option, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4734,8 +4733,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4731454d5650c1489c07ec332a87720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeSize: 1
   red_Base: {fileID: 1635548306}
   blue_Base: {fileID: 412914314}
+  ui: {fileID: 396161587}
 --- !u!4 &1106895583
 Transform:
   m_ObjectHideFlags: 0
@@ -5467,6 +5468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2ea379a161e02459c9e4bbd07f492f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enter: {fileID: 691561043}
+  gameManager: {fileID: 1106895582}
 --- !u!1 &1294924340
 GameObject:
   m_ObjectHideFlags: 0

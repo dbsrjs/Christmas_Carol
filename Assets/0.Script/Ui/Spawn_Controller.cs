@@ -17,6 +17,13 @@ public class Spawn_Controller : MonoBehaviour
     [SerializeField] private Text cost_text;
     [SerializeField] private Text cost_Shadow;
 
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GetComponent<GameManager>();
+    }
+
     public void Wirzard()
     {
         if (cost_Bar.value >= 10)
@@ -27,8 +34,6 @@ public class Spawn_Controller : MonoBehaviour
             cost_Shadow.text = cost_Bar.value.ToString();
         }
     }
-
-    
 
     public void Knight()
     {

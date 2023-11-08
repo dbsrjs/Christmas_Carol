@@ -3,17 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum GameState
-{
-    Play,
-    Pause,
-    Stop
-}
-
 public class Ui : MonoBehaviour
-{
-
-    [HideInInspector] public GameState gamestate = GameState.Play;
+{    
     [SerializeField] private GameObject red_Health;
     [SerializeField] private GameObject blue_Health;
 
@@ -32,10 +23,13 @@ public class Ui : MonoBehaviour
     [SerializeField] private Text cost_text;
     [SerializeField] private Text cost_Shadow;
 
+    private GameManager gameManager;
     private float timer;
 
     void Start()
     {
+        gameManager = GetComponent<GameManager>();
+
         cost_Bar.value = 0;
 
         red_Text.text = red_num.ToString();
@@ -49,6 +43,11 @@ public class Ui : MonoBehaviour
     }
     private void Update()
     {
+        if (gameManager != null && gameManager.timeSize == 0)
+        {
+            return;
+        }
+
         timer += Time.deltaTime;
         if (timer > 1f)
         {

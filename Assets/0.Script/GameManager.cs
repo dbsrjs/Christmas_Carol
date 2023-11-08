@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int timeSize = 1;
+    [HideInInspector] public int timeSize = 1;
 
     [SerializeField] private Red_Base red_Base;
     [SerializeField] private Blue_Base blue_Base;
+    [SerializeField] private Ui ui;
 
     void Update()
     {
@@ -17,5 +18,15 @@ public class GameManager : MonoBehaviour
         {
             timeSize = 0;
         }
+    }
+
+    public void GameStart()
+    {
+        timeSize = 1;
+    }
+
+    public void GameStop()
+    {
+        timeSize = 0;
     }
 }
