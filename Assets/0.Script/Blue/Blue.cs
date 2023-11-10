@@ -9,8 +9,6 @@ public class Blue : MonoBehaviour
     [HideInInspector] public GameObject[] redObjects;
     [HideInInspector] public GameObject[] redBase;
 
-    private GameManager gameManager;
-
     protected int HP; //100
     protected int power;    //40
     protected float speed; //1f 이동 속도
@@ -18,11 +16,6 @@ public class Blue : MonoBehaviour
 
     private float stoppingDistance = 0.7f; // 멈출 거리 설정
     private float atkTimer;
-
-    void Start()
-    {
-        gameManager = GetComponent<GameManager>();
-    }
 
     void Update()
     {
@@ -47,7 +40,7 @@ public class Blue : MonoBehaviour
             float distance = Vector2.Distance(closestTarget.transform.position, transform.position);
 
             // Archer 스크렙트를 갖고 있다면 stoppingDistance를 2.3으로 설정 아닐경우 targetObjects가 red_Base일 경우 stoppingDistance를 1.4로 설정 아니라면 기존대로 0.7로 설정
-            float currentStoppingDistance = GetComponent<Blue_Archer>() != null ? 2.3f : targetObjects[0].tag == "Red_Base" ? 1.4f : stoppingDistance;
+            float currentStoppingDistance = GetComponent<Blue_Archer>() != null ? 2.7f : targetObjects[0].tag == "Red_Base" ? 1.4f : stoppingDistance;
 
             if (distance > currentStoppingDistance) //타겟에게 이동
             {
@@ -60,6 +53,7 @@ public class Blue : MonoBehaviour
                 atkTimer += Time.deltaTime;
                 if (atkTimer > atkTime)
                 {
+                    atkTimer = 0;
                     AttackTarget(closestTarget);
                 }
             }
@@ -120,7 +114,6 @@ public class Blue : MonoBehaviour
 
     public void Hit(int damage) //공격
     {
-        Debug.Log("Blue Attack");
         HP -= damage;   //데미지에 비례해서 hp 감소
         animator.SetTrigger("doHit");    //hit 애니메이션 실행
 
@@ -132,7 +125,7 @@ public class Blue : MonoBehaviour
 
     private IEnumerator Die()
     {
-        this.gameObject.tag = "Die";
+        this.gameObject.tag = "Die";    //죽었을 때 태그를 Die로 바꿔줌
         Destroy(GetComponent<Rigidbody2D>());   //Rigidbody2D 삭제
         Destroy(GetComponent<BoxCollider2D>()); //BoxCollider2D삭제
         animator.SetTrigger("doDie");    //doDie 애니메이션 실행

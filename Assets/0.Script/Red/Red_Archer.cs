@@ -9,10 +9,9 @@ public class Red_Archer : Red
 
     void Start()
     {
-        HP = 100;
-        power = 20;
+        HP = 60;
         speed = 1f;
-        atkTime = 1.2f;
+        atkTime = 1.6f;
     }
 
     public void Attack()

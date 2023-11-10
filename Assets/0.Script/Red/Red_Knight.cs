@@ -6,8 +6,8 @@ public class Red_Knight : Red
 {
     private void Start()
     {
-        HP = 100;
-        power = 40;
+        HP = 80;
+        power = 30;
         speed = 1f;
         atkTime = 1.5f;
     }

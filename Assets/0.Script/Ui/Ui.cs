@@ -43,13 +43,8 @@ public class Ui : MonoBehaviour
     }
     private void Update()
     {
-        if (gameManager != null && gameManager.timeSize == 0)
-        {
-            return;
-        }
-
         timer += Time.deltaTime;
-        if (timer > 1f)
+        if (timer >= 0.65f)
         {
             cost_Bar.value += 1;
             timer = 0;

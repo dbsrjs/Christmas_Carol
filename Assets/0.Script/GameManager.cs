@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
         if (red_Base.HP <= 0 || blue_Base.HP <= 0)
         {
-            timeSize = 0;
+            GameStop();
         }
     }
 

@@ -9,6 +9,6 @@ public class Blue_Knight : Blue
         HP = 100;
         power = 40;
         speed = 1f;
-        atkTime = 1.5f;
+        atkTime = 1.4f;
     }
 }

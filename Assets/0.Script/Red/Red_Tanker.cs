@@ -9,6 +9,6 @@ public class Red_Tanker : Red
         HP = 100;
         power = 20;
         speed = 1f;
-        atkTime = 1.2f;
+        atkTime = 1.3f;
     }
 }

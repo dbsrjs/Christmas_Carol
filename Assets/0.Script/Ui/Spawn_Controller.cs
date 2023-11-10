@@ -9,24 +9,19 @@ public class Spawn_Controller : MonoBehaviour
     [SerializeField] private Transform wirzard_spawn;
 
     [SerializeField] private GameObject wirzard;
-    [SerializeField] private GameObject tanker;
     [SerializeField] private GameObject knight;
+    [SerializeField] private GameObject tanker;
     [SerializeField] private GameObject archer;
 
     [SerializeField] private Slider cost_Bar;
     [SerializeField] private Text cost_text;
     [SerializeField] private Text cost_Shadow;
 
-    private GameManager gameManager;
+    [SerializeField] private GameManager gameManager;
 
-    private void Start()
+    public void Blue_Wirzard()
     {
-        gameManager = GetComponent<GameManager>();
-    }
-
-    public void Wirzard()
-    {
-        if (cost_Bar.value >= 10)
+        if (gameManager.timeSize == 1 && cost_Bar.value >= 10)
         {
             Instantiate(wirzard, wirzard_spawn);
             cost_Bar.value -= 10;
@@ -35,9 +30,9 @@ public class Spawn_Controller : MonoBehaviour
         }
     }
 
-    public void Knight()
+    public void Blue_Knight()
     {
-        if (cost_Bar.value >= 3)
+        if (gameManager.timeSize == 1 && cost_Bar.value >= 3)
         {
             Instantiate(knight, parent);
             cost_Bar.value -= 3;
@@ -46,9 +41,9 @@ public class Spawn_Controller : MonoBehaviour
         }
     }
 
-    public void Tanker()
+    public void Blue_Tanker()
     {
-        if (cost_Bar.value >= 5)
+        if (gameManager.timeSize == 1 && cost_Bar.value >= 5)
         {
             Instantiate(tanker, parent);
             cost_Bar.value -= 5;
@@ -57,9 +52,9 @@ public class Spawn_Controller : MonoBehaviour
         }
     }
 
-    public void Archer()
+    public void Blue_Archer()
     {
-        if (cost_Bar.value >= 7)
+        if (gameManager.timeSize == 1 && cost_Bar.value >= 7)
         {
             Instantiate(archer, parent);
             cost_Bar.value -= 7;

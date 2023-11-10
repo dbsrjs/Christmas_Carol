@@ -9,8 +9,7 @@ public class Blue_Archer : Blue
 
     void Start()
     {
-        HP = 100;
-        power = 20;
+        HP = 80;
         speed = 1f;
         atkTime = 1.2f;
     }

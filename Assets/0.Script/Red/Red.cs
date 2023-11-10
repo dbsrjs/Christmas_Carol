@@ -9,8 +9,6 @@ public class Red : MonoBehaviour
     [HideInInspector] public GameObject[] blueObjects;
     [HideInInspector] public GameObject[] blueBase;
 
-    private GameManager gameManager;
-
     protected int HP; //100
     protected int power;    //20
     protected float speed; //1f 이동 속도
@@ -18,11 +16,6 @@ public class Red : MonoBehaviour
 
     private float stoppingDistance = 0.7f; // 멈출 거리 설정
     private float atkTimer;
-
-    void Start()
-    {
-        gameManager = GetComponent<GameManager>();
-    }
 
     void Update()
     {
@@ -47,7 +40,7 @@ public class Red : MonoBehaviour
             float distance = Vector2.Distance(closestTarget.transform.position, transform.position);
 
             // Archer 스크렙트를 갖고 있다면 stoppingDistance를 2.3으로 설정 아닐경우 targetObjects가 red_Base일 경우 stoppingDistance를 1.4로 설정 아니라면 기존대로 0.로 설정
-            float currentStoppingDistance = GetComponent<Red_Archer>() != null ? 2.3f : targetObjects[0].tag == "Blue_Base" ? 1.4f : stoppingDistance;
+            float currentStoppingDistance = GetComponent<Red_Archer>() != null ? 2.7f : targetObjects[0].tag == "Blue_Base" ? 1.4f : stoppingDistance;
 
             if (distance > currentStoppingDistance) //타겟에게 이동
             {
@@ -121,7 +114,6 @@ public class Red : MonoBehaviour
 
     public void Hit(int damage)
     {        
-        Debug.Log("Red Attack");
         HP -= damage;   //데미지에 비례해서 hp 감소
         animator.SetTrigger("doHit");    //hit 애니메이션 실행
 
@@ -139,6 +131,5 @@ public class Red : MonoBehaviour
         animator.SetTrigger("doDie");    //doDie 애니메이션 실행
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);    //객체 삭제
-
     }
 }
