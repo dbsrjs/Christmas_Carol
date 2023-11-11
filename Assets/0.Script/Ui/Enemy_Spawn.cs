@@ -17,9 +17,9 @@ public class Enemy_Spawn : MonoBehaviour
     private void Update()
     {
         
-        timer_knight += Time.deltaTime;
+        //timer_knight += Time.deltaTime;
         timer_tanker += Time.deltaTime;
-        timer_archer += Time.deltaTime;
+        //timer_archer += Time.deltaTime;
 
         if (timer_knight >= 3.7f)
         {

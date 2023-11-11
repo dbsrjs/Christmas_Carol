@@ -1272,7 +1272,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1010843651}
         m_TargetAssemblyTypeName: Spawn_Controller, Assembly-CSharp
-        m_MethodName: Blue_Knight
+        m_MethodName: Knight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2738,7 +2738,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1010843651}
         m_TargetAssemblyTypeName: Spawn_Controller, Assembly-CSharp
-        m_MethodName: Blue_Archer
+        m_MethodName: Archer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4015,9 +4015,9 @@ MonoBehaviour:
   parent: {fileID: 574048441}
   wirzard_spawn: {fileID: 895983842}
   wirzard: {fileID: 623415241672893585, guid: 2f13b4dee2b8eb34180d0902f9e4333b, type: 3}
-  knight: {fileID: 4272266012374788208, guid: 5ad6ebc410223e14d84dc662eb6de0d1, type: 3}
-  tanker: {fileID: 6517559763046971742, guid: 3f68ba489da570b438aee43e27df291c, type: 3}
-  archer: {fileID: 5265323417659261529, guid: 3818bf36b77bde5499a359bc9e646584, type: 3}
+  knight: {fileID: 4272266012374788234, guid: 5ad6ebc410223e14d84dc662eb6de0d1, type: 3}
+  tanker: {fileID: 6517559763046971738, guid: 3f68ba489da570b438aee43e27df291c, type: 3}
+  archer: {fileID: 5265323417659261523, guid: 3818bf36b77bde5499a359bc9e646584, type: 3}
   cost_Bar: {fileID: 338891730}
   cost_text: {fileID: 410384031}
   cost_Shadow: {fileID: 1561962798}
@@ -4181,7 +4181,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1041576471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1010843651}
+        m_TargetAssemblyTypeName: Spawn_Controller, Assembly-CSharp
+        m_MethodName: LvUp_Knight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1041576471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4307,7 +4319,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1010843651}
         m_TargetAssemblyTypeName: Spawn_Controller, Assembly-CSharp
-        m_MethodName: Blue_Tanker
+        m_MethodName: Tanker
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7017,7 +7029,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1010843651}
         m_TargetAssemblyTypeName: Spawn_Controller, Assembly-CSharp
-        m_MethodName: Blue_Wirzard
+        m_MethodName: Wirzard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

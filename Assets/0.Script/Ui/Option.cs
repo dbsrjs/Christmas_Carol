@@ -16,7 +16,7 @@ public class Option : MonoBehaviour
     public void Open()
     {
         gameObject.SetActive(true);
-        gameManager.GameStop();
+        //gameManager.GameStop();
     }
 
     public void Close()

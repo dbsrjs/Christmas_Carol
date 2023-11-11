@@ -9,9 +9,9 @@ public class Spawn_Controller : MonoBehaviour
     [SerializeField] private Transform wirzard_spawn;
 
     [SerializeField] private GameObject wirzard;
-    [SerializeField] private GameObject knight;
-    [SerializeField] private GameObject tanker;
-    [SerializeField] private GameObject archer;
+    [SerializeField] private Blue_Knight knight;
+    [SerializeField] private Blue_Tanker tanker;
+    [SerializeField] private Blue_Archer archer;
 
     [SerializeField] private Slider cost_Bar;
     [SerializeField] private Text cost_text;
@@ -19,7 +19,7 @@ public class Spawn_Controller : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
 
-    public void Blue_Wirzard()
+    public void Wirzard()
     {
         if (gameManager.timeSize == 1 && cost_Bar.value >= 10)
         {
@@ -30,7 +30,7 @@ public class Spawn_Controller : MonoBehaviour
         }
     }
 
-    public void Blue_Knight()
+    public void Knight()
     {
         if (gameManager.timeSize == 1 && cost_Bar.value >= 3)
         {
@@ -41,7 +41,21 @@ public class Spawn_Controller : MonoBehaviour
         }
     }
 
-    public void Blue_Tanker()
+    public void LvUp_Knight()
+    {
+        if (gameManager.timeSize == 1 && cost_Bar.value >= 10)
+        {
+            Blue_Knight knightComponent = knight.GetComponent<Blue_Knight>();
+            knightComponent.additionalHP += 20; // additionalHP를 20 증가시킵니다.
+            knightComponent.additionalPower += 10; // additionalPower를 10 증가시킵니다.
+
+            cost_Bar.value -= 10;
+            cost_text.text = cost_Bar.value.ToString();
+            cost_Shadow.text = cost_Bar.value.ToString();
+        }
+    }
+
+    public void Tanker()
     {
         if (gameManager.timeSize == 1 && cost_Bar.value >= 5)
         {
@@ -52,7 +66,7 @@ public class Spawn_Controller : MonoBehaviour
         }
     }
 
-    public void Blue_Archer()
+    public void Archer()
     {
         if (gameManager.timeSize == 1 && cost_Bar.value >= 7)
         {
@@ -62,4 +76,5 @@ public class Spawn_Controller : MonoBehaviour
             cost_Shadow.text = cost_Bar.value.ToString();
         }
     }
+
 }

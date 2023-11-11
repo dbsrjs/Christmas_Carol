@@ -16,7 +16,7 @@ public class Red_arrow : MonoBehaviour
     {
         if (collision.GetComponent<Blue>())   //Blue와 출돌
         {
-            collision.GetComponent<Blue>().Hit(15); //20
+            collision.GetComponent<Blue>().Hit(10); //20
         }
 
         else if (collision.GetComponent<Blue_Base>()) //Blue_Base와 출돌
