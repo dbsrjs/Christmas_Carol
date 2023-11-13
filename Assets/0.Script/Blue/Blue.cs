@@ -53,7 +53,6 @@ public class Blue : MonoBehaviour
                 atkTimer += Time.deltaTime;
                 if (atkTimer > atkTime)
                 {
-                    Debug.Log("power : " + power);
                     AttackTarget(closestTarget);
                     atkTimer = 0;
                 }

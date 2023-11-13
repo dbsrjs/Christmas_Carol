@@ -51,6 +51,8 @@ MonoBehaviour:
   animator: {fileID: 4272266012374788238}
   redObjects: []
   redBase: []
+  additionalHP: 0
+  additionalPower: 0
 --- !u!212 &4272266012374788239
 SpriteRenderer:
   m_ObjectHideFlags: 0

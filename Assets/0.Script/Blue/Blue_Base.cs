@@ -18,7 +18,6 @@ public class Blue_Base : MonoBehaviour
     public void Hit(int damage)
     {
         HP -= damage;   //데미지에 비례해서 hp 감소
-        print(HP);
         ui.Blue_Hit(damage);
         animator.SetTrigger("doHit");   //doHit 애니메이션 실행
 
