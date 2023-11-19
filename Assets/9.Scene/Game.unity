@@ -1543,6 +1543,9 @@ MonoBehaviour:
   cost_Bar: {fileID: 338891730}
   cost_text: {fileID: 410384031}
   cost_Shadow: {fileID: 1561962798}
+  gameManager: {fileID: 1106895582}
+  red_Base: {fileID: 1635548306}
+  blue_Base: {fileID: 412914314}
 --- !u!1 &405022588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,7 +1801,7 @@ Transform:
   m_GameObject: {fileID: 412914310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.7, y: 0, z: 0}
-  m_LocalScale: {x: 0.48, y: 0.48, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1990921291}
@@ -1845,7 +1848,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 74b0e940fa17ef543a7612763e435282, type: 3}
+  m_Sprite: {fileID: 6234176133674011997, guid: 85470783dfe21194994d9bef32d314bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1872,8 +1875,8 @@ BoxCollider2D:
   m_Offset: {x: -0.25, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
