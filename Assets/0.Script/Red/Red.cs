@@ -45,7 +45,7 @@ public class Red : MonoBehaviour
             if (distance > currentStoppingDistance) //타겟에게 이동
             {
                 animator.SetTrigger("doMove");
-                MoveToTarget(closestTarget);
+                MoveToTarget();
             }
 
             else   //타겟 공격
@@ -83,11 +83,10 @@ public class Red : MonoBehaviour
         return closestTarget;
     }
 
-    void MoveToTarget(GameObject target)    //타겟에게 이동
+    void MoveToTarget()    //타겟에게 이동
     {
-        // 타겟과 현재 위치 사이의 방향을 계산합니다.
-        Vector2 direction = (target.transform.position - transform.position).normalized;
-        transform.position += (Vector3)direction * speed * Time.deltaTime;  //타겟에게 이동
+        Vector3 vec = Vector3.left * 1 * Time.deltaTime;
+        transform.position += vec;
     }
 
     void AttackTarget(GameObject target)    //공격
