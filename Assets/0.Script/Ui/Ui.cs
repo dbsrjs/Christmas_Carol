@@ -27,15 +27,16 @@ public class Ui : MonoBehaviour
     {
         cost_Bar.value = 0;
 
-        red_Text.text = (red_Base.HP / 10).ToString();
-        red_Shadow.text = (red_Base.HP / 10).ToString();
+        red_Text.text = (red_Base.HP / 5).ToString();
+        red_Shadow.text = (red_Base.HP / 5).ToString();
 
-        blue_Text.text = (blue_Base.HP / 10).ToString();
-        blue_Shadow.text = (blue_Base.HP / 10).ToString();
+        blue_Text.text = (blue_Base.HP / 5).ToString();
+        blue_Shadow.text = (blue_Base.HP / 5).ToString();
 
         cost_text.text = cost_Bar.value.ToString();
         cost_Shadow.text = cost_Bar.value.ToString();
     }
+
     private void Update()
     {
         timer += Time.deltaTime;

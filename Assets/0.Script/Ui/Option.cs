@@ -44,7 +44,7 @@ public class Option : MonoBehaviour
     public void OnExitButton()  //게임 종료
     {
         UnityEditor.EditorApplication.isPlaying = false;    //게임 종료(실행)
-        Application.Quit(); // 게임 종료(build)
+        //Application.Quit(); // 게임 종료(build)
     }
 
 }
