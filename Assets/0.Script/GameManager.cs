@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Red_Base red_Base;
     [SerializeField] private Blue_Base blue_Base;
-    [SerializeField] private Ui ui;
 
     void Update()
     {
